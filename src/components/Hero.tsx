@@ -38,15 +38,10 @@ export default function Hero() {
             Desenvolvimento de Software & SaaS
           </div>
           <div className="hidden md:flex items-center gap-8">
-            {[
-              { value: "2+", label: "Projetos" },
-              { value: "100%", label: "Satisfação" },
-            ].map((s) => (
-              <div key={s.label} className="text-right">
-                <p className="text-lg font-black gradient-text leading-none">{s.value}</p>
-                <p className="text-xs text-slate-400 mt-0.5">{s.label}</p>
-              </div>
-            ))}
+            <div className="text-right">
+              <p className="text-lg font-black gradient-text leading-none">100%</p>
+              <p className="text-xs text-slate-400 mt-0.5">Satisfação</p>
+            </div>
           </div>
         </motion.div>
 
