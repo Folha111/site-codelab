@@ -89,9 +89,7 @@ export default function CTA() {
                 </p>
 
                 <motion.a
-                  href={`https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/obrigado"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#25D366] text-white font-black text-sm shadow-xl shadow-green-900/40 hover:bg-[#22c55e] transition-colors w-full justify-center"
