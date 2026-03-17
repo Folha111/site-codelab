@@ -104,6 +104,17 @@ export default function CTA() {
                 <p className="text-slate-600 text-xs mt-4">
                   Resposta em poucos minutos
                 </p>
+
+                <div className="mt-6 pt-6 border-t border-slate-700/50 w-full">
+                  <p className="text-slate-500 text-xs mb-3">Prefere por e-mail?</p>
+                  <a
+                    href="mailto:codelabs.br@gmail.com"
+                    className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm font-medium"
+                  >
+                    <Mail size={15} />
+                    codelabs.br@gmail.com
+                  </a>
+                </div>
               </div>
             </div>
           </div>
