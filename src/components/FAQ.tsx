@@ -7,7 +7,7 @@ import { Plus, Minus } from "lucide-react";
 const faqs = [
   {
     q: "Qual tecnologia vocês usam?",
-    a: "Usamos a tecnologia que mais se encaixa com o projeto desejado. Cada solução é diferente — avaliamos o contexto, a escala e os objetivos antes de escolher a stack ideal. Trabalhamos com Next.js, React, Node.js, entre outras ferramentas modernas do mercado.",
+    a: "Usamos a tecnologia que mais se encaixa com o projeto desejado. No nosso dia a dia trabalhamos com Next.js, React, TypeScript, Node.js, Tailwind CSS, entre outras ferramentas modernas — mas a escolha sempre depende do contexto, da escala e dos objetivos do projeto.",
   },
   {
     q: "Quanto tempo leva para entregar um projeto?",
