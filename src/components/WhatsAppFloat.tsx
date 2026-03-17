@@ -55,9 +55,7 @@ export default function WhatsAppFloat() {
                   Fale com a gente no WhatsApp e receba um orçamento gratuito.
                 </p>
                 <a
-                  href={`https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/obrigado"
                   onClick={dismiss}
                   className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-[#25D366] px-3 py-1.5 rounded-full hover:bg-[#22c55e] transition-colors"
                 >
@@ -87,9 +85,7 @@ export default function WhatsAppFloat() {
         </AnimatePresence>
 
         <motion.a
-          href={`https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`}
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/obrigado"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           onMouseEnter={() => setShowTooltip(true)}
