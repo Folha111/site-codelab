@@ -156,7 +156,7 @@ export default function Course() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full gradient-bg text-white font-bold text-sm shadow-md shadow-violet-200 hover:opacity-90 transition-opacity w-fit"
               >
-                Acessar plataforma
+                Eu quero aprender
                 <ArrowUpRight size={15} />
               </a>
             </div>
