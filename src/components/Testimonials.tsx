@@ -6,7 +6,7 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     name: "Rafael Mendes",
-    role: "Fundador, Agenda Fácil",
+    role: "Empreendedor",
     text: "A CodeLab entendeu exatamente o que eu precisava. Entregaram um sistema limpo, rápido e fácil de usar. O processo foi transparente do início ao fim — só paguei depois de aprovar tudo.",
     stars: 5,
     initials: "RM",
@@ -14,8 +14,8 @@ const testimonials = [
   },
   {
     name: "Camila Torres",
-    role: "Diretora, Studio CT",
-    text: "Precisava de um site profissional para meu estúdio e a CodeLab superou as expectativas. Design moderno, responsivo e entregue no prazo. Recomendo demais.",
+    role: "Designer",
+    text: "Precisava de um site profissional e a CodeLab superou as expectativas. Design moderno, responsivo e entregue no prazo. Recomendo demais.",
     stars: 5,
     initials: "CT",
     color: "from-cyan-500 to-teal-600",
