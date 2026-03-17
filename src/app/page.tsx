@@ -4,6 +4,8 @@ import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import Course from "@/components/Course";
 import Process from "@/components/Process";
+import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -17,6 +19,8 @@ export default function Home() {
         <Portfolio />
         <Course />
         <Process />
+        <Testimonials />
+        <FAQ />
         <CTA />
       </main>
       <Footer />
