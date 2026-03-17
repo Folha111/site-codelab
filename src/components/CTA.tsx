@@ -1,144 +1,113 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, MessageCircle } from "lucide-react";
-import { useState } from "react";
+import { ArrowRight, Mail, MessageCircle, CheckCircle } from "lucide-react";
+
+const WA_NUMBER = "5511999999999"; // Substitua pelo número real
+const WA_MESSAGE = encodeURIComponent("Olá! Vim pelo site da CodeLab e gostaria de um orçamento personalizado para o meu projeto.");
+
+const perks = [
+  "Orçamento sem compromisso",
+  "Resposta rápida",
+  "Atendimento personalizado",
+];
 
 export default function CTA() {
-  const [sent, setSent] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Aqui você conecta ao seu backend / Resend / EmailJS / etc.
-    setSent(true);
-  };
-
   return (
-    <section id="contato" className="py-16 md:py-28 bg-white relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 opacity-[0.03]"
+    <section id="contato" className="py-16 md:py-28 bg-slate-50 relative overflow-hidden">
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage: `radial-gradient(circle at 1px 1px, #0f172a 1px, transparent 0)`,
           backgroundSize: "32px 32px",
         }}
       />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full opacity-5 blur-3xl gradient-bg pointer-events-none" />
 
-      <div className="relative max-w-6xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Left */}
-          <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <span className="inline-block text-xs font-semibold uppercase tracking-widest text-violet-600 mb-3">
-              Contato
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-5 leading-tight">
-              Vamos construir{" "}
-              <span className="gradient-text">juntos?</span>
-            </h2>
-            <p className="text-slate-500 text-lg leading-relaxed mb-10">
-              Conta pra gente sobre o seu projeto. Respondemos em até 24h com uma proposta personalizada — sem enrolação.
-            </p>
+      <div className="relative max-w-4xl mx-auto px-4 sm:px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden"
+        >
+          <div className="grid md:grid-cols-2">
+            {/* Left — info */}
+            <div className="p-8 sm:p-12 flex flex-col justify-center">
+              <span className="inline-block text-xs font-semibold uppercase tracking-widest text-violet-600 mb-4">
+                Contato
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-4 leading-tight">
+                Vamos construir{" "}
+                <span className="gradient-text">juntos?</span>
+              </h2>
+              <p className="text-slate-500 text-sm leading-relaxed mb-8">
+                Nos chame no WhatsApp, entendemos sua demanda e montamos um orçamento personalizado para o seu projeto.
+              </p>
 
-            <div className="flex flex-col gap-4">
+              <ul className="flex flex-col gap-3 mb-8">
+                {perks.map((p) => (
+                  <li key={p} className="flex items-center gap-2.5 text-sm text-slate-600">
+                    <CheckCircle size={16} className="text-emerald-500 shrink-0" />
+                    {p}
+                  </li>
+                ))}
+              </ul>
+
               <a
-                href="mailto:codelabs.br@gmail.com"
-                className="inline-flex items-center gap-3 text-slate-700 hover:text-violet-600 transition-colors font-medium text-sm"
+                href={`mailto:codelabs.br@gmail.com`}
+                className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-slate-600 transition-colors"
               >
-                <div className="w-10 h-10 rounded-xl bg-violet-50 flex items-center justify-center">
-                  <Mail size={18} className="text-violet-600" />
-                </div>
+                <Mail size={14} />
                 codelabs.br@gmail.com
               </a>
-              <a
-                href="https://wa.me/5511999999999"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 text-slate-700 hover:text-teal-600 transition-colors font-medium text-sm"
-              >
-                <div className="w-10 h-10 rounded-xl bg-teal-50 flex items-center justify-center">
-                  <MessageCircle size={18} className="text-teal-600" />
-                </div>
-                WhatsApp
-              </a>
             </div>
-          </motion.div>
 
-          {/* Right — Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            {sent ? (
-              <div className="bg-slate-50 rounded-2xl p-10 text-center border border-slate-100">
-                <div className="w-14 h-14 rounded-2xl gradient-bg flex items-center justify-center mx-auto mb-4 shadow-md">
-                  <ArrowRight size={24} className="text-white" />
+            {/* Right — WhatsApp CTA */}
+            <div className="relative bg-slate-900 p-8 sm:p-12 flex flex-col items-center justify-center text-center overflow-hidden">
+              {/* Glow */}
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#14532d_0%,_transparent_70%)] opacity-30 pointer-events-none" />
+              <div
+                className="absolute inset-0 opacity-[0.06] pointer-events-none"
+                style={{
+                  backgroundImage: `radial-gradient(circle at 1px 1px, #ffffff 1px, transparent 0)`,
+                  backgroundSize: "24px 24px",
+                }}
+              />
+
+              <div className="relative">
+                {/* WhatsApp icon */}
+                <div className="w-20 h-20 rounded-3xl bg-[#25D366] flex items-center justify-center mx-auto mb-6 shadow-2xl shadow-green-900/50">
+                  <MessageCircle size={38} className="text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">Mensagem enviada!</h3>
-                <p className="text-slate-500 text-sm">
-                  Recebemos seu contato e retornaremos em breve.
+
+                <h3 className="text-2xl font-black text-white mb-3">
+                  Fale com a gente
+                </h3>
+                <p className="text-slate-400 text-sm leading-relaxed mb-8 max-w-xs">
+                  Clique abaixo, nos conte sobre sua ideia e receba um orçamento personalizado direto no WhatsApp.
+                </p>
+
+                <motion.a
+                  href={`https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#25D366] text-white font-black text-sm shadow-xl shadow-green-900/40 hover:bg-[#22c55e] transition-colors w-full justify-center"
+                >
+                  <MessageCircle size={18} />
+                  Chamar no WhatsApp
+                  <ArrowRight size={16} />
+                </motion.a>
+
+                <p className="text-slate-600 text-xs mt-4">
+                  Resposta em poucos minutos
                 </p>
               </div>
-            ) : (
-              <form
-                onSubmit={handleSubmit}
-                className="bg-slate-50 rounded-2xl p-5 sm:p-8 border border-slate-100 flex flex-col gap-4"
-              >
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="flex flex-col gap-1.5">
-                    <label className="text-xs font-semibold text-slate-700">Nome</label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="Seu nome"
-                      value={form.name}
-                      onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="px-4 py-3 rounded-xl border border-slate-200 bg-white text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-violet-300 focus:border-transparent transition"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-1.5">
-                    <label className="text-xs font-semibold text-slate-700">E-mail</label>
-                    <input
-                      type="email"
-                      required
-                      placeholder="seu@email.com"
-                      value={form.email}
-                      onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="px-4 py-3 rounded-xl border border-slate-200 bg-white text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-violet-300 focus:border-transparent transition"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-1.5">
-                  <label className="text-xs font-semibold text-slate-700">Sobre o projeto</label>
-                  <textarea
-                    required
-                    rows={5}
-                    placeholder="Me conta o que você precisa construir..."
-                    value={form.message}
-                    onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="px-4 py-3 rounded-xl border border-slate-200 bg-white text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-violet-300 focus:border-transparent transition resize-none"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl gradient-bg text-white font-semibold text-sm shadow-md shadow-violet-200 hover:opacity-90 transition-opacity"
-                >
-                  Enviar mensagem
-                  <ArrowRight size={16} />
-                </button>
-              </form>
-            )}
-          </motion.div>
-        </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
