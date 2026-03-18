@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Mail, MessageCircle, CheckCircle } from "lucide-react";
 
-const WA_NUMBER = "5551996917733";
+const WA_NUMBER = "5551995508166";
 const WA_MESSAGE = encodeURIComponent("Olá! Vim pelo site da CodeLab e gostaria de um orçamento personalizado para o meu projeto.");
 
 const perks = [

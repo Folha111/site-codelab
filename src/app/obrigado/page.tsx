@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MessageCircle, ArrowLeft, CheckCircle } from "lucide-react";
 
-const WA_NUMBER = "5551996917733";
+const WA_NUMBER = "5551995508166";
 const WA_MESSAGE = encodeURIComponent("Olá! Vim pelo site da CodeLab e gostaria de um orçamento personalizado para o meu projeto.");
 
 export default function Obrigado() {
